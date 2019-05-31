@@ -1,4 +1,3 @@
-//house-lease
 //获取应用实例
 // import { IMyApp } from "../../app";
 
@@ -25,7 +24,7 @@ Page({
      */
     onLoad(options: any) {
         console.log(options);
-        wxService.setPageTitle("首页");
+        wxService.setPageTitle("page title");
     },
 
     /**

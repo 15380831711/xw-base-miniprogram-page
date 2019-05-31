@@ -4,7 +4,7 @@
 import { AppServiceProvider } from "../../providers/app-service/app-service";
 import { AlertServiceProvider } from "../../providers/alert-service/alert-service";
 import { WxServiceProvider } from "../../providers/wx-service/wx-service";
-import { WxBindRes } from "../../providers/constants";
+import { WxBindRes, WxShareBtnRes, WxShareData } from "../../providers/constants";
 
 
 // const app = getApp<IMyApp>();
@@ -86,8 +86,15 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage() {
-
+    onShareAppMessage(res: WxShareBtnRes) {
+        let shareData: WxShareData = new WxShareData();
+        shareData.title = "分享标题";
+        if (wxService.isFromButton(res)) {
+        }
+        if (wxService.isFromMenu(res)) {
+            shareData.path = wxService.getCurrentPagePath();
+        }
+        return shareData;
     }
 
 });

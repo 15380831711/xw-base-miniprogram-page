@@ -4,7 +4,7 @@
 import { AppServiceProvider } from "../../providers/app-service/app-service";
 import { AlertServiceProvider } from "../../providers/alert-service/alert-service";
 import { WxServiceProvider } from "../../providers/wx-service/wx-service";
-import { WxBindRes, WxShareBtnRes, WxShareData } from "../../providers/constants";
+import { WxBindRes, WxShareBtnRes, WxShareData } from "../../providers/constants/index";
 
 
 // const app = getApp<IMyApp>();

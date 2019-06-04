@@ -6,7 +6,6 @@ import { AlertServiceProvider } from "../../providers/alert-service/alert-servic
 import { WxServiceProvider } from "../../providers/wx-service/wx-service";
 import { WxBindRes, WxShareBtnRes, WxShareData } from "../../providers/constants/index";
 
-
 // const app = getApp<IMyApp>();
 
 const appService = new AppServiceProvider();

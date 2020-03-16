@@ -1,18 +1,18 @@
 //获取应用实例
 // import { IMyApp } from "../../app";
 
-import { AppServiceProvider } from "../../providers/app-service/app-service";
-import { AlertServiceProvider } from "../../providers/alert-service/alert-service";
-import { WxServiceProvider } from "../../providers/wx-service/wx-service";
+import appService from '../../providers/app-service/app-service';
+import alertService from '../../providers/alert-service/alert-service';
+import wxService from '../../providers/wx-service/wx-service';
 import { WxBindRes, WxShareBtnRes, WxShareData } from "../../providers/constants/index";
 
 // const app = getApp<IMyApp>();
 
-const appService = new AppServiceProvider();
-const alertService = new AlertServiceProvider();
-const wxService = new WxServiceProvider();
-
 Page({
+    appService: appService,
+    alertService: alertService,
+    wxService: wxService,
+
     data: {
 
     },
@@ -23,21 +23,21 @@ Page({
      */
     onLoad(options: any) {
         console.log(options);
-        wxService.setPageTitle("page title");
+        this.wxService.setPageTitle("page title");
     },
 
     /**
      * 页面跳转
      */
     toPage(e: WxBindRes) {
-        appService.push(e.currentTarget.dataset.page);
+        this.appService.push(e.currentTarget.dataset.page);
     },
 
     /**
      * 显示alert
      */
     showAlert() {
-        alertService.alert("提示信息");
+        this.alertService.alert("提示信息");
     },
 
     /**
